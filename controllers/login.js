@@ -7,7 +7,7 @@ module.exports.postLogin=function(req,res){
       var password=req.body.password;
       if(email !== "dev@cashbag.vn"){
             res.render('login',{
-                  errors:[
+                  notices:[
                         'Wrong Email.'
                   ],
                   value:req.body
@@ -17,7 +17,7 @@ module.exports.postLogin=function(req,res){
       if( password !== "123123")
       {
             res.render('login',{
-                  errors:[
+                  notices:[
                         'Wrong password.'
                   ],
                   value:req.body
@@ -25,7 +25,7 @@ module.exports.postLogin=function(req,res){
             return;
       }
       res.render('login',{
-            errors:[
+            notices:[
                   'Success'
             ]
       });
